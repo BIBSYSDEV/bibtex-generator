@@ -14,15 +14,15 @@ export enum BibTeXType {
   Unpublished = 'unpublished',
 }
 
-export type KeyField = {
+export interface KeyField {
   key: string;
-};
+}
 
-export type UrlField = {
+export interface UrlField {
   url?: string;
-};
+}
 
-export type BasicFields = {
+export interface BasicFields {
   title: string;
   year: string;
   doi?: string;
@@ -41,9 +41,9 @@ export type BasicFields = {
     | 'nov'
     | 'dec';
   note?: string;
-};
+}
 
-export type BibTeXFields = {
+export interface BibTeXFields {
   [BibTeXType.Article]: KeyField &
     BasicFields &
     UrlField & {
@@ -176,7 +176,7 @@ export type BibTeXFields = {
       month?: string;
       year?: string;
     };
-};
+}
 
 export class BibTeXEntry<T extends BibTeXType> {
   type: T;
