@@ -1,8 +1,9 @@
 {
   "name": "bibtex-generator",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Typescript generation of BibTeX databases",
+  "main": "dist/BibTeX.js",
+  "types": "dist/BibTeX.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "npx eslint . ",
