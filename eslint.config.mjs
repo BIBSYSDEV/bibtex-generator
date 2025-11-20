@@ -1,11 +1,36 @@
 // @ts-check
 
-import eslint from '@eslint/js';
-import {defineConfig, globalIgnores} from 'eslint/config';
-import tseslint from 'typescript-eslint';
+import {globalIgnores} from 'eslint/config';
 
-export default defineConfig(
-    eslint.configs.recommended,
-    tseslint.configs.recommended,
-    globalIgnores(["dist/", "*.js"])
-);
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsparser from "@typescript-eslint/parser";
+import prettierPlugin from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
+
+export default [
+
+    globalIgnores(["coverage", "dist/", "node_modules", "*.js"]),
+    {
+        files: ["**/*.ts"],
+
+        languageOptions: {
+            parser: tsparser,
+            sourceType: "module",
+        },
+
+        plugins: {
+            "@typescript-eslint": tseslint,
+            prettier: prettierPlugin,
+        },
+
+        rules: {
+            ...tseslint.configs.recommended.rules,
+            ...prettierConfig.rules,
+            "@typescript-eslint/no-unused-vars": "warn",
+            "no-console": "warn",
+            "semi": ["error", "always"],
+            "quotes": ["error", "single"],
+            "prettier/prettier": "error",
+        },
+    },
+];
