@@ -183,38 +183,8 @@ export class BibTeXEntry<T extends BibTeXType> {
   fields: BibTeXFields[T];
 
   constructor(type: T, fields: BibTeXFields[T]) {
-    this.monthTranslator(fields);
     this.type = type;
     this.fields = fields;
-  }
-
-  private monthTranslator(fields: BibTeXFields[T]) {
-    const monthEnum = [
-      'jan',
-      'feb',
-      'mar',
-      'apr',
-      'may',
-      'jun',
-      'jul',
-      'aug',
-      'sep',
-      'oct',
-      'nov',
-      'dec',
-    ] as const;
-    if ('month' in fields && fields.month) {
-      const monthIndex =
-        typeof fields.month === 'string'
-          ? parseInt(fields.month, 10) - 1
-          : fields.month - 1;
-
-      if (monthIndex >= 0 && monthIndex < 12) {
-        fields.month = monthEnum[monthIndex];
-      } else {
-        throw new Error(`Invalid month: ${fields.month}`);
-      }
-    }
   }
 
   toString(): string {

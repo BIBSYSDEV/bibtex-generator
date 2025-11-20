@@ -10,38 +10,6 @@ function createArticle(): BibTeXEntry<BibTeXType.Article> {
   });
 }
 
-describe('The BibTeX entry fields work as expected', () => {
-  test.each([
-    ['01', 'jan'],
-    ['3', 'mar'],
-    [10, 'oct'],
-  ])('should translate %i to month-string %s', (input, expected) => {
-    const actual = new BibTeXEntry(BibTeXType.Book, {
-      key: 'key0',
-      author: 'My author',
-      title: 'My title',
-      year: '2025',
-      publisher: 'My publisher',
-      month: input, // Can this be anything other than any?
-    });
-    expect(actual.fields.month).toBe(expected);
-  });
-  it('should throw when input for month is nonsense', () => {
-    const month = 'Arrant nonsense';
-    expect(
-      () =>
-        new BibTeXEntry(BibTeXType.Booklet, {
-          key: 'key0',
-          author: 'My author',
-          howpublished: 'Written on a rock',
-          title: 'My title',
-          year: '2021',
-          month: month,
-        }),
-    ).toThrow('Invalid month: ' + month);
-  });
-});
-
 describe('The BibTeX database contains BibTeX entries', () => {
   it('should allow BibTeX database creation', () => {
     const entry = createArticle();
