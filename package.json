@@ -11,6 +11,10 @@
     "test.watch": "jest --watch"
   },
   "homepage": "https://github.com/BIBSYSDEV/bibtex-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BIBSYSDEV/bibtex-generator"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
