@@ -82,6 +82,7 @@ export interface BibTeXFields {
     CommonOptional & {
       author: string;
       booktitle: string;
+      chapter: string;
       publisher: string;
       address?: string;
       edition?: string;
@@ -98,6 +99,7 @@ export interface BibTeXFields {
       booktitle: string;
       publisher: string;
       address?: string;
+      chapter?: string;
       editor?: string;
       number?: string;
       pages?: string;

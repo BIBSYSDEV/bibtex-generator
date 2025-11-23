@@ -136,6 +136,7 @@ function createInBook(): BibTeXEntry<BibTeXType.InBook> {
   return new BibTeXEntry(BibTeXType.InBook, {
     author: 'Author, In Book',
     booktitle: 'My book',
+    chapter: 'Chapter 1',
     key: 'inbook-0',
     publisher: 'My book publisher',
     title: 'My in book',

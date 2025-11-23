@@ -6,6 +6,7 @@ export class BibTexSpec {
     annote: string,
     author: string,
     booktitle: string,
+    chapter: string,
     doi: string,
     edition: string,
     editor: string,
@@ -45,6 +46,7 @@ export class BibTexSpec {
     this.annote = annote;
     this.author = author;
     this.booktitle = booktitle;
+    this.chapter = chapter;
     this.doi = doi;
     this.edition = edition;
     this.editor = editor;
@@ -72,6 +74,7 @@ export class BibTexSpec {
   annote: string;
   author: string;
   booktitle: string;
+  chapter: string;
   doi: string;
   edition: string;
   editor: string;
@@ -114,6 +117,7 @@ export function specFor(type: BibTeXType): BibTexSpec {
     annote: `annote-${type.toString()}`,
     author: `author-${type.toString()}`,
     booktitle: `booktitle-${type.toString()}`,
+    chapter: `chapter-${type.toString()}`,
     doi: `doi-${type.toString()}`,
     edition: `edition-${type.toString()}`,
     editor: `editor-${type.toString()}`,
