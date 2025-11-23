@@ -4,7 +4,7 @@
     "declaration": true,
     "isolatedModules": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDirs": ["./src", "./tests"],
     "forceConsistentCasingInFileNames": true,
   },
   "include": ["src/**/*"],

@@ -191,6 +191,7 @@ export class BibTeXEntry<T extends BibTeXType> {
     const { key, ...restFields } = this.fields;
 
     const fieldsString = Object.entries(restFields)
+      .sort()
       .map(([fieldKey, value]) => `  ${fieldKey} = {${value}}`)
       .join(',\n');
 
