@@ -80,21 +80,21 @@ Since `conference` is typically viewed as the same as `inproceedings`, this has 
 
 ### Fields
 
-| **Type**           | **Obligatory Fields**                               | **Optional Fields**                                                                                                    |
-|--------------------|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| **@article**       | `author`, `journal`, `title`, `year`                | `doi`, `issn`, `month`, `note`, `number`, `pages`, `url`, `volume`                                                     |
-| **@book**          | `author`, `publisher`, `title`, `year`              | `address`, `doi`, `edition`, `month`, `note`, `series`, `url`, `volume`                                                |
-| **@booklet**       | `author`, `howpublished`, `title`, `year`           | `address`, `doi`, `editor`, `month`, `note`, `number`, `organization`, `series`, `url`, `volume`                       |
-| **@inbook**        | `author`, `booktitle`, `publisher`, `title`, `year` | `address`, `doi`, `edition`, `editor`, `month`, `note`, `number`, `pages`, `series`, `url`, `volume`                   |
-| **@incollection**  | `author`, `booktitle`, `publisher`, `title`, `year` | `address`, `doi`, `editor`, `month`, `note`, `number`, `pages`, `series`, `url`, `volume`                              |
-| **@inproceedings** | `author`, `booktitle`, `title`, `year`              | `address`, `doi`, `editor`, `month`, `note`, `number`, `organization`, `pages`, `publisher`, `series`, `url`, `volume` |
-| **@manual**        | `title`, `year`                                     | `address`, `author`, `doi`, `edition`, `month`, `note`, `organization`, `url`                                          |
-| **@mastersthesis** | `author`, `school`, `title`, `year`                 | `address`, `doi`, `month`, `note`, `type`, `url`                                                                       |
-| **@misc**          |                                                     | `author`, `howpublished`, `note`, `title`, `url`, `year`                                                               |
-| **@phdthesis**     | `author`, `school`, `title`, `year`                 | `address`, `doi`, `month`, `note`, `type`, `url`                                                                       |
-| **@proceedings**   | `title`, `year`                                     | `address`, `doi`, `editor`, `month`, `note`, `number`, `publisher`, `series`, `url`, `volume`                          |
-| **@techreport**    | `author`, `institution`, `title`, `year`            | `address`, `doi`, `month`, `note`, `number`, `type`, `url`                                                             |
-| **@unpublished**   | `author`, `note`, `title`                           | `month`, `url`, `year`                                                                                                 |
+| **Type**           | **Obligatory Fields**                                          | **Optional Fields**                                                                                                              |
+|--------------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **@article**       | `author`, `journal`, `title`, `year`                           | `annote`, doi`, `issn`, `month`, `note`, `number`, `pages`, `url`, `volume`                                                      |
+| **@book**          | `author`, `publisher`, `title`, `year`                         | `address`, `annote`, `doi`, `edition`, `month`, `note`, `series`, `url`, `volume`                                                |
+| **@booklet**       | `author`, `howpublished`, `title`, `year`                      | `address`, `annote`, `doi`, `editor`, `month`, `note`, `number`, `organization`, `series`, `url`, `volume`                       |
+| **@inbook**        | `author`, `booktitle`, `chapter`, `publisher`, `title`, `year` | `address`, `annote`, `doi`, `edition`, `editor`, `month`, `note`, `number`, `pages`, `series`, `url`, `volume`                   |
+| **@incollection**  | `author`, `booktitle`, `publisher`, `title`, `year`            | `address`, `annote`, `chapter`, `doi`, `editor`, `month`, `note`, `number`, `pages`, `series`, `url`, `volume`                   |
+| **@inproceedings** | `author`, `booktitle`, `title`, `year`                         | `address`, `annote`, `doi`, `editor`, `month`, `note`, `number`, `organization`, `pages`, `publisher`, `series`, `url`, `volume` |
+| **@manual**        | `title`, `year`                                                | `address`, `annote`, `author`, `doi`, `edition`, `month`, `note`, `organization`, `url`                                          |
+| **@mastersthesis** | `author`, `school`, `title`, `year`                            | `address`, `annote`, `doi`, `month`, `note`, `type`, `url`                                                                       |
+| **@misc**          |                                                                | `author`, `annote`,  `howpublished`, `note`, `title`, `url`, `year`                                                              |
+| **@phdthesis**     | `author`, `school`, `title`, `year`                            | `address`, `annote`, `doi`, `month`, `note`, `type`, `url`                                                                       |
+| **@proceedings**   | `title`, `year`                                                | `address`, `annote`, `doi`, `editor`, `month`, `note`, `number`, `publisher`, `series`, `url`, `volume`                          |
+| **@techreport**    | `author`, `institution`, `title`, `year`                       | `address`, `annote`, `doi`, `month`, `note`, `number`, `type`, `url`                                                             |
+| **@unpublished**   | `author`, `note`, `title`                                      | `annote`, month`, `url`, `year`                                                                                                  |
 
 
 Note we include the non-standard `url` as an optional field on every type, this may be ignored by tools or styles; expressing the URL or an entry may therefore require that the URL for an entry is also expressed in e.g. `note` or `howpublisbed`.
