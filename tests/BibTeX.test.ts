@@ -31,21 +31,23 @@ describe('The BibTeX database contains BibTeX entries', () => {
 
   it('should allow use of optional fields', () => {
     const {
+      annote,
       author,
-      key,
-      journal,
-      title,
-      year,
       doi,
       issn,
+      journal,
+      key,
       month,
       note,
       number,
       pages,
+      title,
       url,
       volume,
+      year,
     } = specFor(BibTeXType.Article);
     const entry = createArticle(author, journal, key, title, year);
+    entry.fields.annote = annote;
     entry.fields.doi = doi;
     entry.fields.issn = issn;
     entry.fields.month = month;
@@ -58,18 +60,19 @@ describe('The BibTeX database contains BibTeX entries', () => {
     database.add(entry);
     const expected = new BibTeXBuilder(BibTeXType.Article)
       .setKey(key)
+      .setField('annote', annote)
       .setField('author', author)
-      .setField('journal', journal)
-      .setField('title', title)
-      .setField('year', year)
       .setField('doi', doi)
       .setField('issn', issn)
+      .setField('journal', journal)
       .setField('month', month)
       .setField('note', note)
       .setField('number', number)
       .setField('pages', pages)
+      .setField('title', title)
       .setField('url', url)
       .setField('volume', volume)
+      .setField('year', year)
       .toString();
     expect(database.toString()).toBe(expected);
   });

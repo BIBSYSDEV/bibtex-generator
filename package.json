@@ -1,6 +1,6 @@
 {
   "name": "bibtex-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Typescript generation of BibTeX databases",
   "main": "dist/BibTeX.js",
   "types": "dist/BibTeX.d.ts",

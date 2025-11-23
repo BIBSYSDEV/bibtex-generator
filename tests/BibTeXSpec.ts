@@ -3,6 +3,7 @@ import { BibTeXType } from '../src/BibTeX';
 export class BibTexSpec {
   constructor(
     address: string,
+    annote: string,
     author: string,
     booktitle: string,
     doi: string,
@@ -41,6 +42,7 @@ export class BibTexSpec {
     year: string,
   ) {
     this.address = address;
+    this.annote = annote;
     this.author = author;
     this.booktitle = booktitle;
     this.doi = doi;
@@ -67,6 +69,7 @@ export class BibTexSpec {
   }
 
   address: string;
+  annote: string;
   author: string;
   booktitle: string;
   doi: string;
@@ -108,6 +111,7 @@ export class BibTexSpec {
 export function specFor(type: BibTeXType): BibTexSpec {
   return {
     address: `address-${type.toString()}`,
+    annote: `annote-${type.toString()}`,
     author: `author-${type.toString()}`,
     booktitle: `booktitle-${type.toString()}`,
     doi: `doi-${type.toString()}`,

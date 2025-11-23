@@ -18,8 +18,9 @@ export interface KeyField {
   key: string;
 }
 
-export interface UrlField {
+export interface CommonOptional {
   url?: string;
+  annote?: string;
 }
 
 export interface BasicFields {
@@ -46,7 +47,7 @@ export interface BasicFields {
 export interface BibTeXFields {
   [BibTeXType.Article]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       journal: string;
       issn?: string;
@@ -56,7 +57,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.Book]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       publisher: string;
       address?: string;
@@ -66,7 +67,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.Booklet]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       howpublished: string;
       address?: string;
@@ -78,7 +79,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.InBook]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       booktitle: string;
       publisher: string;
@@ -92,7 +93,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.InCollection]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       booktitle: string;
       publisher: string;
@@ -105,7 +106,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.InProceedings]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       booktitle: string;
       address?: string;
@@ -119,7 +120,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.Manual]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author?: string;
       organization?: string;
       address?: string;
@@ -127,14 +128,14 @@ export interface BibTeXFields {
     };
   [BibTeXType.MastersThesis]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       school: string;
       address?: string;
       type?: string;
     };
   [BibTeXType.Misc]: KeyField &
-    UrlField & {
+    CommonOptional & {
       author?: string;
       title?: string;
       howpublished?: string;
@@ -143,7 +144,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.PhdThesis]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       school: string;
       address?: string;
@@ -151,7 +152,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.Proceedings]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       editor?: string;
       volume?: string;
       number?: string;
@@ -161,7 +162,7 @@ export interface BibTeXFields {
     };
   [BibTeXType.TechReport]: KeyField &
     BasicFields &
-    UrlField & {
+    CommonOptional & {
       author: string;
       institution: string;
       number?: string;
@@ -169,7 +170,7 @@ export interface BibTeXFields {
       type?: string;
     };
   [BibTeXType.Unpublished]: KeyField &
-    UrlField & {
+    CommonOptional & {
       author: string;
       title: string;
       note: string;
