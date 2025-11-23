@@ -35,4 +35,37 @@ describe('The BibTeX database contains BibTeX entries', () => {
       'Duplicate key encountered when updating BibTeX database',
     );
   });
+
+  it('should allow use of optional fields', () => {
+    const entry = new BibTeXEntry(BibTeXType.Article, {
+      key: 'smith2025',
+      author: 'Smith, Kim',
+      title: 'The source of the C-Root',
+      year: '2025',
+      journal: 'Journal of studies',
+      volume: '10',
+      number: '2',
+      issn: '1234-123X',
+      month: 'jan',
+      url: 'https://example.org/journal/1234-123X/2025/10/2/smith',
+      note: 'Not a real thing, just an example',
+      doi: '10.NNNN/1234123X.10.2.smith.2025',
+      pages: '11-55',
+    });
+    const expected = `@article{smith2025,
+  author = {Smith, Kim},
+  title = {The source of the C-Root},
+  year = {2025},
+  journal = {Journal of studies},
+  volume = {10},
+  number = {2},
+  issn = {1234-123X},
+  month = {jan},
+  url = {https://example.org/journal/1234-123X/2025/10/2/smith},
+  note = {Not a real thing, just an example},
+  doi = {10.NNNN/1234123X.10.2.smith.2025},
+  pages = {11-55}
+}`;
+    expect(entry.toString()).toBe(expected);
+  });
 });

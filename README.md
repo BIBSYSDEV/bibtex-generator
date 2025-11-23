@@ -16,7 +16,7 @@ const article = new BibTeXEntry(BibTeXType.Article, {
 console.log(database.toString());
 ```
 
-Outputs:
+**Output:**
 
 ```^^TeX
 @article{key0,
@@ -44,6 +44,7 @@ It is a plain-text file (typically with the extension `.bib`) that contains entr
   journal = {Journal of Studies}
 }
 ```
+
 ### What is an entry?
 
 An entry is a bibliograph item in the database.
@@ -52,12 +53,12 @@ The aim of an entry is to form a basis for a valid citation independent of citat
 
 ### Assumptions
 
-  - The output is UTF-8 (i.e. **NOT** ASCII)
-  - String processing (such as escaping special characters like `ö` -> `\"o`) is done before inserting the string into the entry.
+  - The output is UTF-8 (**NOT** ASCII)
+  - String processing (such as escaping special characters like `ö` -> `\"o`) is done before inserting the string into the entry
   - Everything we output is a string
     - dates can be `2025`, `ca. 1910`
     - `number`, `volume` are often observed as non-numeric (such as roman numerals) values
-    - Month is an item from the provided month enum `jan`, `feb`, etc.
+    - Month is an item from the provided month enum `jan`, `feb`, etc
 
 ## Supported types
 
@@ -94,10 +95,11 @@ Since `conference` is typically viewed as the same as `inproceedings`, this has 
 | **@proceedings**   | `title`, `year`                                     | `address`, `doi`, `editor`, `month`, `note`, `number`, `publisher`, `series`, `url`, `volume`                          |
 | **@techreport**    | `author`, `institution`, `title`, `year`            | `address`, `doi`, `month`, `note`, `number`, `type`, `url`                                                             |
 | **@unpublished**   | `author`, `note`, `title`                           | `month`, `url`, `year`                                                                                                 |
-``` 
+
+
 Note we include the non-standard `url` as an optional field on every type, this may be ignored by tools or styles; expressing the URL or an entry may therefore require that the URL for an entry is also expressed in e.g. `note` or `howpublisbed`.
 
-## How to use it:
+## How to use it
 
 - Create a database
 - Add entries to the database
@@ -125,7 +127,8 @@ Example:
     });
     console.log(database.toString())
 ```
-Output:
+
+**Output:**
 
 ```
 @article{smith2025,
@@ -145,9 +148,9 @@ Output:
 
 ```
 
-### How do I represent?
+### How to represent
 
-#### Bachelors theses, Licenciate theses, etc.
+#### Bachelors theses, Licenciate theses, etc
 
 Typically, just add a "type" field.
 
@@ -160,4 +163,3 @@ Typically, just add a "type" field.
   type = {Bachelors thesis}
 }
 ```
-
