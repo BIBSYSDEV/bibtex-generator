@@ -5,7 +5,7 @@ A simple, opinionated Typescript API that allows you to create BibTeX Databases.
 ## TL;DR
 
 ```Typescript
-    const database = new BibTeXDatabase();
+const database = new BibTeXDatabase();
 const article = new BibTeXEntry(BibTeXType.Article, {
     key: 'key0',
     author: 'My Author',
