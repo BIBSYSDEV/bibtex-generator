@@ -1,9 +1,14 @@
 {
   "name": "bibtex-generator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Typescript generation of BibTeX databases",
   "main": "dist/BibTeX.js",
   "types": "dist/BibTeX.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "npx eslint . ",
@@ -15,7 +20,9 @@
     "type": "git",
     "url": "https://github.com/BIBSYSDEV/bibtex-generator"
   },
-  "keywords": [],
+  "keywords": [
+    "Typescript", "BibTeX"
+  ],
   "author": "",
   "license": "MIT",
   "type": "commonjs",
