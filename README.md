@@ -30,7 +30,8 @@ console.log(database.toString());
 
 ## What it does
 
-The API forces you to create valid entries based on the entry type, by defining what is valid for each type in terms of obligatory and optional fields. 
+The API forces you to create valid entries based on the entry type, by defining what is valid for each type in terms of
+obligatory and optional fields.
 
 ### What is a BibTeX database?
 
@@ -53,9 +54,10 @@ The aim of an entry is to form a basis for a valid citation independent of citat
 
 ### Assumptions
 
-  - The output is UTF-8 (**NOT** ASCII)
-  - String processing (such as escaping special characters like `ö` -> `\"o`) is done before inserting the string into the entry
-  - Everything we output is a string
+- The output is UTF-8 (**NOT** ASCII)
+- String processing (such as escaping special characters like `ö` -> `\"o`) is done before inserting the string into the
+  entry
+- Everything we output is a string
     - dates can be `2025`, `ca. 1910`
     - `number`, `volume` are often observed as non-numeric (such as roman numerals) values
     - Month is an item from the provided month enum `jan`, `feb`, etc
@@ -82,7 +84,7 @@ Since `conference` is typically viewed as the same as `inproceedings`, this has 
 
 | **Type**           | **Obligatory Fields**                                          | **Optional Fields**                                                                                                              |
 |--------------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **@article**       | `author`, `journal`, `title`, `year`                           | `annote`, doi`, `issn`, `month`, `note`, `number`, `pages`, `url`, `volume`                                                      |
+| **@article**       | `author`, `journal`, `title`, `year`                           | `annote`, `doi`, `issn`, `month`, `note`, `number`, `pages`, `url`, `volume`                                                     |
 | **@book**          | `author`, `publisher`, `title`, `year`                         | `address`, `annote`, `doi`, `edition`, `month`, `note`, `series`, `url`, `volume`                                                |
 | **@booklet**       | `author`, `howpublished`, `title`, `year`                      | `address`, `annote`, `doi`, `editor`, `month`, `note`, `number`, `organization`, `series`, `url`, `volume`                       |
 | **@inbook**        | `author`, `booktitle`, `chapter`, `publisher`, `title`, `year` | `address`, `annote`, `doi`, `edition`, `editor`, `month`, `note`, `number`, `pages`, `series`, `url`, `volume`                   |
@@ -94,20 +96,22 @@ Since `conference` is typically viewed as the same as `inproceedings`, this has 
 | **@phdthesis**     | `author`, `school`, `title`, `year`                            | `address`, `annote`, `doi`, `month`, `note`, `type`, `url`                                                                       |
 | **@proceedings**   | `title`, `year`                                                | `address`, `annote`, `doi`, `editor`, `month`, `note`, `number`, `publisher`, `series`, `url`, `volume`                          |
 | **@techreport**    | `author`, `institution`, `title`, `year`                       | `address`, `annote`, `doi`, `month`, `note`, `number`, `type`, `url`                                                             |
-| **@unpublished**   | `author`, `note`, `title`                                      | `annote`, month`, `url`, `year`                                                                                                  |
+| **@unpublished**   | `author`, `note`, `title`                                      | `annote`, `month`, `url`, `year`                                                                                                 |
 
-
-Note we include the non-standard `url` as an optional field on every type, this may be ignored by tools or styles; expressing the URL or an entry may therefore require that the URL for an entry is also expressed in e.g. `note` or `howpublisbed`.
+Note we include the non-standard `url` as an optional field on every type, this may be ignored by tools or styles;
+expressing the URL or an entry may therefore require that the URL for an entry is also expressed in e.g. `note` or
+`howpublisbed`.
 
 ## How to use it
 
 - Create a database
 - Add entries to the database
-  - Choose a type
-  - Add the obligatory fields
-  - Add the optional fields
+    - Choose a type
+    - Add the obligatory fields
+    - Add the optional fields
 
 Example:
+
 ```^^typescript
     const database = new BibTeXDatabase();
     const entry = new BibTeXEntry(BibTeXType.Article, {
