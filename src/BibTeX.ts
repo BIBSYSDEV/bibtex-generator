@@ -19,14 +19,14 @@ export interface KeyField {
 }
 
 export interface CommonOptional {
-  url?: string;
   annote?: string;
+  doi?: string;
+  url?: string;
 }
 
 export interface BasicFields {
   title: string;
   year: string;
-  doi?: string;
   month?:
     | number
     | 'jan'
