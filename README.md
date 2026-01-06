@@ -11,6 +11,7 @@ const article = new BibTeXEntry(BibTeXType.Article, {
     year: '2025',
     journal: 'Journal of Studies',
 });
+database.add(article);
 console.log(database.toString());
 ```
 
