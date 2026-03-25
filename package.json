@@ -1,6 +1,6 @@
 {
   "name": "bibtex-generator",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Typescript generation of BibTeX databases",
   "main": "dist/BibTeX.js",
   "types": "dist/BibTeX.d.ts",
@@ -44,7 +44,7 @@
     "typescript-eslint": "^8.47.0"
   },
   "volta": {
-    "node": "24.14.0",
-    "npm": "11.11.1"
+    "node": "24.14.1",
+    "npm": "11.12.0"
   }
 }
