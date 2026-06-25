@@ -15,7 +15,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - uses: volta-cli/action@5c175f92dea6f48441c436471e6479dbc192e194
       - run: npm ci --ignore-scripts
       - run: npm run build --if-present
